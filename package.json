@@ -1,0 +1,21 @@
+{
+  "name": "huudung-learn-node-express",
+  "version": "1.0.0",
+  "description": "everything becom easy with me",
+  "main": "app.js",
+  "scripts": {
+    "test": "hii"
+  },
+  "repository": {
+    "type": "git",
+    "url": "node"
+  },
+  "keywords": [
+    "de"
+  ],
+  "author": "huudung",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.21.0"
+  }
+}
