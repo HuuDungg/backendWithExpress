@@ -4,7 +4,8 @@
   "description": "everything becom easy with me",
   "main": "app.js",
   "scripts": {
-    "test": "hii"
+    "test": "hii",
+    "start": "node app.js"
   },
   "repository": {
     "type": "git",
