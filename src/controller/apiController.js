@@ -24,12 +24,36 @@ const getAllUser = async (req, res) => {
     });
 }
 
-const getUserById = () => {
+const getUserById = async (req, res) => {
+    let data = req.params;
+    console.log("check params:", data);
+
+    let UserFound = await User.findOne({ _id: data.id });
+
+    res.status(200).json({
+        found: UserFound
+    })
 
 }
 
-const deleteUserById = () => {
+const updateUser = async (req, res) => {
+    let data = req.body;
+    console.log("check body:", data);
+    let UserFound = await User.updateOne({ _id: data._id }, { name: data.name, email: data.email, city: data.city });
 
+    res.status(200).json({
+        updated: UserFound
+    })
 }
 
-module.exports = { CreateUser, getAllUser, getUserById, deleteUserById }
+const deleteUserById = async (req, res) => {
+    let id = req.query.id;
+
+    await User.deleteOne({ _id: id });
+
+    res.status(200).json({
+        deleted: "deleted user by id: " + id
+    })
+}
+
+module.exports = { CreateUser, getAllUser, getUserById, deleteUserById, updateUser }
