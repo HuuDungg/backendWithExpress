@@ -4,6 +4,7 @@ const app = express();
 //web router
 const webrouter = require('./routes/web');
 const { createConnection } = require('./migration/connection');
+const routerApi = require('./routes/api');
 
 //config template engine
 ConfigViewEngine(app);
@@ -13,7 +14,7 @@ port = process.env.PORT
 hostname = process.env.HOST_NAME
 
 //define router
-app.use("/", webrouter);
+app.use("/api/v1", routerApi);
 
 
 ; (async () => {

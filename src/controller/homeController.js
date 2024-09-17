@@ -1,6 +1,6 @@
 const { default: mongoose } = require("mongoose");
 const blogSchema = require("../model/blog");
-const Kitten = require("../model/Kitten")
+const Kitten = require("../model/kitten")
 
 const handleGetHomePage = (req, res) => {
     res.send(
