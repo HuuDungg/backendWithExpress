@@ -1,6 +1,8 @@
 const express = require('express');
 const ConfigViewEngine = require('./config/viewEngine');
 const app = express();
+const fileUpload = require('express-fileupload')
+app.use(fileUpload());
 //web router
 const webrouter = require('./routes/web');
 const { createConnection } = require('./migration/connection');
