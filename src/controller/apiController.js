@@ -1,13 +1,19 @@
 const User = require("../model/user");
 
-const CreateUser = (req, res) => {
-    const luka = new User({
-        name: 'HuuDung',
-        email: "huudung2004@gmail.com",
-        city: "Viet Tri"
+const CreateUser = async (req, res) => {
+    let name = req.body.name;
+    let email = req.body.email;
+    let city = req.body.city;
+
+    const luka = await User.create({
+        name: name,
+        email: email,
+        city: city,
     });
-    luka.save();
-    res.status(200).json(luka);
+
+    res.status(200).json({
+        created: luka
+    });
 }
 
 const getAllUser = async (req, res) => {
@@ -18,4 +24,12 @@ const getAllUser = async (req, res) => {
     });
 }
 
-module.exports = { CreateUser, getAllUser }
+const getUserById = () => {
+
+}
+
+const deleteUserById = () => {
+
+}
+
+module.exports = { CreateUser, getAllUser, getUserById, deleteUserById }
